@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IconPark.Blazor", "IconPark.Blazor\IconPark.Blazor.csproj", "{1A442FBC-AD2A-4C5B-BD2E-41D133BD80BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconPark.Blazor.Sample", "Sample\IconPark.Blazor.Sample\IconPark.Blazor.Sample.csproj", "{93DE753D-402E-494C-9DE2-4E8E0A95A624}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A442FBC-AD2A-4C5B-BD2E-41D133BD80BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A442FBC-AD2A-4C5B-BD2E-41D133BD80BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A442FBC-AD2A-4C5B-BD2E-41D133BD80BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A442FBC-AD2A-4C5B-BD2E-41D133BD80BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93DE753D-402E-494C-9DE2-4E8E0A95A624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93DE753D-402E-494C-9DE2-4E8E0A95A624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93DE753D-402E-494C-9DE2-4E8E0A95A624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93DE753D-402E-494C-9DE2-4E8E0A95A624}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90D867EF-FEA2-4CA4-8DC5-0F09E55F2EC5}
+	EndGlobalSection
+EndGlobal
