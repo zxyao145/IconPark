@@ -1,99 +1,22 @@
 ﻿using OneOf;
-using System.ComponentModel;
 
 namespace IconPark;
 
-public enum StrokeLinecap : byte
+public record SvgOptions
 {
-    [Description("butt")]
-    Butt = 0,
-    [Description("round")]
-    Round = 1,
-    [Description("square")]
-    Square = 2
-}
+    public Theme Theme { get; init; } = Theme.Outline;
 
-public enum StrokeLinejoin : byte
-{
-    [Description("miter")]
-    Miter = 0,
-    [Description("round")]
-    Round = 1,
-    [Description("bevel")]
-    Bevel = 2
-}
+    public OneOf<int, string> Size { get; init; } = DefaultConfig.Size;
 
-public enum Theme : byte
-{
-    [Description("outline")]
-    Outline = 0,
+    public int StrokeWidth { get; init; } = DefaultConfig.StrokeWidth;
 
-    [Description("filled")]
-    Filled = 1,
+    public List<string> Fill { get; init; } = new List<string>();
 
-    [Description("two-tone")]
-    TwoTone = 2,
+    public StrokeLinecap StrokeLinecap { get; init; } = DefaultConfig.StrokeLinecap;
 
-    [Description("multi-color")]
-    MultiColor = 3
-}
+    public StrokeLinejoin StrokeLinejoin { get; init; } = DefaultConfig.StrokeLinejoin;
 
-
-public class DefaultConfig
-{
-    public const string Size = "1em";
-    public const int StrokeWidth = 4;
-    public static StrokeLinecap StrokeLinecap = StrokeLinecap.Round;
-    public static StrokeLinejoin StrokeLinejoin = StrokeLinejoin.Round;
-    public static Theme Theme = Theme.Outline;
-    public const bool Rtl = false;
-    public const string Prefix = "i";
-    public static Dictionary<Theme, Dictionary<string, string>> Colors = new Dictionary<Theme, Dictionary<string, string>>
-    {
-        {
-            Theme.Outline,
-            new Dictionary<string, string>(){
-                { "fill", "#333" },
-                { "background", "transparent" },
-            }
-        },
-        {
-            Theme.Filled,
-            new Dictionary<string, string>(){
-                { "fill", "#333" },
-                { "background", "#FFF" },
-            }
-        },
-        {
-            Theme.TwoTone,
-            new Dictionary<string, string>(){
-                { "fill", "#333" },
-                { "twoTone", "#2F88FF" },
-            }
-        },
-        {
-            Theme.MultiColor,
-            new Dictionary<string, string>(){
-                { "outStrokeColor", "#333" },
-                { "outFillColor", "#2F88FF" },
-                { "innerStrokeColor", "#FFF" },
-                { "innerFillColor", "#43CCF8" },
-            }
-        }
-    };
-}
-
-
-internal class IconParkOptions: IEquatable<IconParkOptions>
-{
-    public string Id { get; set; } = Guid.NewGuid().ToString();
-    public Theme Theme { get; set; } = Theme.Outline;
-
-    public OneOf<int, string> Size { get; set; } = DefaultConfig.Size;
-
-    public int StrokeWidth { get; set; } = DefaultConfig.StrokeWidth;
-
-    public List<string> Fill { get; set; } = new List<string>();
+    public string Id { get; init; } = Guid.NewGuid().ToString();
 
     internal List<string> Colors
     {
@@ -196,56 +119,16 @@ internal class IconParkOptions: IEquatable<IconParkOptions>
         }
     }
 
-    public StrokeLinecap StrokeLinecap { get; set; } = DefaultConfig.StrokeLinecap;
-
-    public StrokeLinejoin StrokeLinejoin { get; set; } = DefaultConfig.StrokeLinejoin;
-
-
-    public override bool Equals(object? obj)
+    internal string SizeStr
     {
-        if(obj is IconParkOptions other)
+        get
         {
-            return Equals(other);
-        }
-        return false;
-    }
-
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
-    }
-
-    public bool Equals(IconParkOptions? other)
-    {
-        if(other == null) return false;
-        var eq = this.Id == other.Id
-            && this.Theme == other.Theme
-            && this.Size.Equals(other.Size)
-            && this.StrokeWidth == other.StrokeWidth
-            && this.Fill == other.Fill
-            && this.StrokeLinecap == other.StrokeLinecap
-            && this.StrokeLinejoin == other.StrokeLinejoin;
-        return eq;
-    }
-
-    public static bool operator ==(IconParkOptions? b, IconParkOptions? c)
-    {
-        if (ReferenceEquals(b, null))
-        {
-            if(ReferenceEquals(c, null))
+            if (Size.IsT0)
             {
-                return true;
+                return Size.AsT0.ToString();
             }
-            return false;
+            return Size.AsT1;
         }
-        else
-        {
-            return b.Equals(c);
-        }
-    }
-    public static bool operator !=(IconParkOptions? b, IconParkOptions? c)
-    {
-        return !(b == c);
     }
 }
 

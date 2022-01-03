@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace IconPark;
 
-internal static class Ext
+internal static class Extension
 {
 
     public static string GetDescription<T>(this T value)

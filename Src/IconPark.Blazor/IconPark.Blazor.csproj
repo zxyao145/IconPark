@@ -2,9 +2,12 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
 		<RootNamespace>IconPark</RootNamespace>
+		<!-- 禁用Blazor默认的SourceGenerator，否则在自定义的SourceGenerator执行的时候，Blazor组件还没编译 -->
+		<UseRazorSourceGenerator>false</UseRazorSourceGenerator>
+		<!-- 生成SourceGenerator生成的文件 -->
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 	</PropertyGroup>
 
@@ -15,6 +18,8 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.1" />
 		<PackageReference Include="OneOf" Version="3.0.205" />
+		<ProjectReference Include="..\IconPark.Blazor.SourceGenerate\IconPark.Blazor.SourceGenerate.csproj" 
+						  OutputItemType="Analyzer"
+						  ReferenceOutputAssembly="false" />
 	</ItemGroup>
-
 </Project>
