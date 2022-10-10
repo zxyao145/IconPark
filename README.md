@@ -1,6 +1,6 @@
 # Introduction
 
-[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/IconPark)](https://www.nuget.org/packages/IconPark/)
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/IconPark.Blazor)](https://www.nuget.org/packages/IconPark.Blazor/)
 
 
 ByteDance IconPark icon library in Blazor. 
