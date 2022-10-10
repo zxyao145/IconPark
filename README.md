@@ -1,4 +1,7 @@
-## Introduction
+# Introduction
+
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/IconPark)](https://www.nuget.org/packages/IconPark/)
+
 
 ByteDance IconPark icon library in Blazor. 
 
@@ -11,8 +14,21 @@ ByteDance IconPark icon library in Blazor.
 # Usage
 
 1. install IconPark.Blazor
+
 2. @using IconPark
-3. `<Camera />`, `<Camera  Size="24"/>`
+
+3. Search for the icon you need on https://iconpark.oceanengine.com/official, and modify the name of the icon using the Pascal specification.
+   ```react
+   camera --> <Camera /> <Camera  Size="24"/> 
+   
+   all-application --> <AllApplication />
+   
+   system --> <SystemIcon />
+   ```
+
+**note**：IconPark **System** component is renamed to **SystemIcon**
+
+## Api
 
 | Property       | Type                       | Description                                                 | Default value            |
 | -------------- | -------------------------- | ----------------------------------------------------------- | ------------------------ |
