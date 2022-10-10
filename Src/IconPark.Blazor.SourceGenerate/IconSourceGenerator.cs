@@ -52,13 +52,13 @@ using Microsoft.AspNetCore.Components;
 
 namespace IconPark;
 
-public partial class ACane : IconParkComponmentBase
+public partial class " + componentName + @": IconParkComponmentBase
 {
 	protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
 	{
 		__builder.OpenElement(0, ""span"");
-        __builder.OpenComponent<IconPark.Svg." + componentName + @">(1);
-        __builder.AddAttribute(2, ""Props"", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<IconPark.SvgOptions>(this.GetSvgOptions()
+        __builder.OpenComponent<IconPark.Svg.Component." + componentName + @">(1);
+        __builder.AddAttribute(2, ""Props"", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<IconPark.Svg.SvgOptions>(this.GetSvgOptions()
         ));
         __builder.CloseComponent();
         __builder.CloseElement();

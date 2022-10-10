@@ -1,0 +1,29 @@
+﻿section {
+    border-left: 4px solid #efefef;
+    padding-left: 12px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    line-height: 1.5em;
+}
+
+
+table td {
+    border: 1px solid #efefef;
+    padding: 10px;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+        table tr > td:first-child{
+            max-width: 500px;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #f6f8fa;
+        }
+
+
+table thead tr td{
+    font-weight: 700;
+    font-size: 20px;
+}

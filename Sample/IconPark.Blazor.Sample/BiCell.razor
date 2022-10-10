@@ -1,0 +1,23 @@
+﻿@using System.Web
+
+<div class="bi-d-cell" style="@Style">
+    @ChildContent
+    <span class="bi-title">@Name</span>
+    <pre>@HttpUtility.HtmlDecode(Code)</pre>
+</div>
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public string? Name { get; set; }
+
+    [Parameter]
+    public string? Code { get; set; }
+
+    [Parameter]
+    public int? Width { get; set; } = 280;
+
+    private string Style => Width == null ? "" : $"width: {Width}px;";
+}

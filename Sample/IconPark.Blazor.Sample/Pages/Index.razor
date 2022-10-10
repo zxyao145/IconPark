@@ -1,6 +1,98 @@
 ﻿@page "/"
-@*@using IconPark*@
+@using IconPark
+
 
 <PageTitle>Index</PageTitle>
 
-<ACane />
+<h3>ByteDance IconPark in Blazor. </h3>
+<section>
+    source repository: https://github.com/bytedance/iconpark 
+    <br />
+    project website：https://iconpark.oceanengine.com/home
+</section>
+
+<table>
+    <thead>
+        <tr>
+            <td>Blazor icons</td>
+            <td>Preview</td>
+            <td>Theme</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                &lt;Camera Theme=&quot;ThemeType.Outline&quot;
+                        Size=&quot;32&quot;
+                        Fill=@@(new List&lt;string&gt;{&quot;#000000&quot;}) /&gt;
+            </td>
+            <td>
+                <Camera Theme="ThemeType.Outline"
+                        Size="32"
+                        Fill=@(new List<string>{"#000000"}) />
+            </td>
+            <td>
+                ThemeType.Outline
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                &lt;Camera Theme=&quot;ThemeType.Filled&quot;
+                        Size=&quot;32&quot;
+                        Fill=@@(new List&lt;string&gt;{&quot;#333&quot;}) /&gt;
+            </td>
+            <td>
+                <Camera Theme="ThemeType.Filled"
+                        Size="32"
+                        Fill=@(new List<string>{"#333"}) />
+            </td>
+            <td>
+                ThemeType.Filled
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                &lt;Camera Theme=&quot;ThemeType.TwoTone&quot;
+                        Size=&quot;32&quot;
+                        Fill=@@(new List&lt;string&gt;{&quot;#333&quot;, &quot;#2F88FF&quot;}) /&gt;
+            </td>
+            <td>
+                <Camera Theme="ThemeType.TwoTone"
+                        Size="32"
+                        Fill=@(new List<string>{"#333", "#2F88FF"}) />
+            </td>
+            <td>
+                ThemeType.TwoTone
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                &lt;Camera Theme=&quot;ThemeType.MultiColor&quot;
+                        Size=&quot;32&quot;
+                        StrokeWidth="8"
+                        Fill=@@(new List&lt;string&gt;{&quot;#333&quot;, &quot;#2F88FF&quot;, &quot;#FFF&quot;, &quot;#43CCF8&quot;}) 
+                        StrokeLinecap=StrokeLinecapType.Square
+                        StrokeLinejoin=StrokeLinejoinType.Miter 
+                        /&gt;
+            </td>
+            <td>
+                <Camera Theme="ThemeType.MultiColor"
+                        Size="32"
+                        StrokeWidth="8"
+                        Fill=@(new List<string>{"#333", "#2F88FF", "#FFF", "#43CCF8"}) 
+                        StrokeLinecap=StrokeLinecapType.Square
+                        StrokeLinejoin=StrokeLinejoinType.Miter />
+            </td>
+            <td>
+                ThemeType.MultiColor
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<section>
+  <b>note</b>：IconPark System component is renamed to SystemIcon
+</section>
