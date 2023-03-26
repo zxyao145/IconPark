@@ -18,7 +18,6 @@ public abstract class IconParkComponmentBase : IComponent
     }
 
     #region props
-
     /// <summary>
     /// 主题
     /// </summary>
@@ -93,5 +92,7 @@ public abstract class IconParkComponmentBase : IComponent
 
     protected virtual void BuildRenderTree(RenderTreeBuilder builder)
     {
+        builder.OpenElement(0, "span");
+        builder.AddAttribute(1, "class", "i-icon");
     }
 }

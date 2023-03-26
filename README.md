@@ -17,7 +17,14 @@ ByteDance IconPark icon library in Blazor.
 
 2. @using IconPark
 
-3. Search for the icon you need on https://iconpark.oceanengine.com/official, and modify the name of the icon using the Pascal specification.
+3. import csss file:
+
+
+   ```html
+   <link href="_content/IconPark.Blazor/dist/index.css" rel="stylesheet" />
+   ```
+
+4. Search for the icon you need on https://iconpark.oceanengine.com/official, and modify the name of the icon using the Pascal specification.
    ```react
    camera --> <Camera /> <Camera  Size="24"/> 
    
